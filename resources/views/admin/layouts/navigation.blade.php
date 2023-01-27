@@ -14,9 +14,13 @@
                 </a>
             </li>
             <li data-toggle="tooltip" title="خروج">
-                <a href="login.html" class="go-to-page">
-                    <i class="icon ti-power-off"></i>
-                </a>
+                <form name="myform" action="{{route('logout')}}" method="post">
+                    @csrf
+                    <input type='hidden' name='query'/>
+                    <a href="javascript: submitform()" class="go-to-page">
+                        <i class="icon ti-power-off"></i>
+                    </a>
+                </form>
             </li>
         </ul>
     </div>
