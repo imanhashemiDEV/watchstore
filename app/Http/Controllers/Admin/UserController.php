@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\EditUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -16,8 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-       $users = User::query()->paginate(10);
-        return view('admin.user.users', compact('users'));
+        $title = "لیست کاربران";
+        return view('admin.user.list',compact('title'));
     }
 
     /**
@@ -27,7 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        $title = "ایجاد کاربر";
+        return view('admin.user.create',compact('title'));
     }
 
     /**
@@ -36,19 +39,18 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
         $image = User::saveImage($request->file);
         User::query()->create([
-            'name'=>$request->name,
-            'user_name'=>$request->user_name,
-            'email'=>$request->email,
-            'mobile'=>$request->mobile,
-            'password'=>Hash::make($request->password),
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'mobile'=>$request->input('mobile'),
+            'password'=>Hash::make($request->input('password')),
             'photo'=>$image,
         ]);
 
-        return  redirect()->back()->with('message','کاربر با موفقیت ذخیره شد');
+        return  redirect()->route('users.index')->with('message','کاربر جدید با موفقیت ثبت شد');
     }
 
     /**
@@ -69,8 +71,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {  $title = "ویرایش کاربر";
+        $user = User::query()->find($id);
+        return view('admin.user.edit', compact('user','title'));
     }
 
     /**
@@ -80,9 +83,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditUserRequest $request, $id)
     {
-        //
+        $user = User::query()->find($id);
+        $image = User::saveImage($request->file);
+        $user->update([
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'mobile'=>$request->input('mobile'),
+            'password'=>($request->input('password') ? Hash::make($request->input('password')) : $user->password ) ,
+            'photo'=>$image,
+        ]);
+
+        return  redirect()->route('users.index')->with('message','کاربر جدید با موفقیت ویرایش شد');
     }
 
     /**

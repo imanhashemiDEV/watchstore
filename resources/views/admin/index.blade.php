@@ -1,4 +1,3 @@
-
 @extends('admin.layouts.master')
 @section('content')
     <main class="main-content">

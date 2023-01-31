@@ -16,7 +16,7 @@
 </head>
 <body class="small-navigation">
 @include('admin.layouts.navigation')
-@include('admin.layouts.header')
+@include('admin.layouts.header',[ $title = $title ?? ""])
 @livewireStyles
 @yield('content')
 @livewireScripts

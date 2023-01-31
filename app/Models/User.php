@@ -55,14 +55,11 @@ class User extends Authenticatable
           $name = time().'.'.$file->extension();
           $smallImage = Image::make($file->getRealPath());
           $bigImage = Image::make($file->getRealPath());
-
           $smallImage->resize(256,256,function ($constraint){
               $constraint->aspectRatio();
           });
-
-          Storage::disk('local')->put('admin/images/users/small/'.$name,(string) $smallImage->encode('png',90));
-          Storage::disk('local')->put('admin/images/users/big/'.$name,(string) $bigImage->encode('png',90));
-
+          Storage::disk('local')->put('admin/users/small/'.$name,(string) $smallImage->encode('png',90));
+          Storage::disk('local')->put('admin/users/big/'.$name,(string) $bigImage->encode('png',90));
           return $name;
       }else{
           return '';
