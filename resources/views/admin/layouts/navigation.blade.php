@@ -67,6 +67,20 @@
                     <li><a href="{{route('category.index')}}">لیست دسته بندی ها</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="#"> اسلایدر</a>
+                <ul>
+                    <li><a href="{{route('sliders.create')}}">ایجاد اسلایدر</a></li>
+                    <li><a href="{{route('sliders.index')}}">لیست اسلایدر</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"> برندها</a>
+                <ul>
+                    <li><a href="{{route('brands.create')}}">ایجاد برند</a></li>
+                    <li><a href="{{route('brands.index')}}">لیست برندها</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>

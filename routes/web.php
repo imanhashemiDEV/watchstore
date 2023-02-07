@@ -43,6 +43,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     ///------ Products -----------///
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('sliders', \App\Http\Controllers\Admin\SliderColtroller::class);
+    Route::resource('brands', \App\Http\Controllers\Admin\BrandController::class);
 
 
 
