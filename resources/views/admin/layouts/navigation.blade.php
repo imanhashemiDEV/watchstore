@@ -81,6 +81,13 @@
                     <li><a href="{{route('brands.index')}}">لیست برندها</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="#"> رنگ ها</a>
+                <ul>
+                    <li><a href="{{route('colors.create')}}">ایجاد رنگ</a></li>
+                    <li><a href="{{route('colors.index')}}">لیست رنگ ها</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>
