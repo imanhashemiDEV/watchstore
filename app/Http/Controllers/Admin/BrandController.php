@@ -41,7 +41,7 @@ class BrandController extends Controller
      */
     public function store(BrandRequest $request)
     {
-        $image = Brand::saveImage($request->file);
+        $image = Brand::saveImage($request->image);
         Brand::query()->create([
             'title'=>$request->input('title'),
             'image'=> $image

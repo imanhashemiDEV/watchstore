@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{url('panel/vendors/select2/css/select2.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('panel/plugins/sweet_alert/sweetalert2.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('panel/plugins/colorpicker/css/bootstrap-colorpicker.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('panel/plugins/datepicker/kamadatepicker.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('css/custom.css')}}">
 </head>
 <body class="small-navigation">
@@ -29,6 +30,8 @@
 <script src="{{url('panel/plugins/sweet_alert/sweetalert2.all.min.js')}}"></script>
 <script src="{{url('panel/plugins/colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
 <script src="{{url('panel/plugins/colorpicker/js/colorpicker.js')}}"></script>
+<script src="{{url('panel/plugins/datepicker/kamadatepicker.min.js')}}"></script>
+<script src="{{url('panel/plugins/ckeditor/ckeditor.js')}}"></script>
 <script src="{{url('panel/vendors/slick/slick.min.js')}}"></script>
 <script src="{{url('panel/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{url('panel/assets/js/app.js')}}"></script>
