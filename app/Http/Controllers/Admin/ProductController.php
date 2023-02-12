@@ -84,6 +84,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $title = "لیست محصولات";
+        $product = Product::query()->find($id);
+        $categories = Category::query()->pluck('title', 'id');
+        $brands = Brand::query()->pluck('title', 'id');
+        return view('admin.product.edit', compact('title','product','categories','brands'));
     }
 
     /**
@@ -95,7 +99,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::query()->find($id);
+        $image = Product::saveImage($request->file);
+        $product->update([
+            'title'=>$request->input('title'),
+            'title_en'=>$request->input('title_en'),
+            'slug'=> Helper::make_slug($request->input('title')),
+            'price'=>$request->input('price'),
+            'count'=>$request->input('count'),
+            'image'=>($request->file ? $image : $product->image),
+            'guaranty'=>$request->input('guaranty'),
+            'discount'=>$request->input('discount'),
+            'description'=>$request->input('description'),
+            'is_special'=>$request->input('is_special') === 'on',
+            'special_expiration'=>($request->input('special_expiration') !==null  ? Verta::parse($request->input('special_expiration'))->datetime() : now()),
+            'category_id'=>$request->input('category_id'),
+            'brand_id'=>$request->input('brand_id'),
+        ]);
+
+        return redirect()->route('products.index')->with('message', 'محصول با موفقیت ویرایش شد');
     }
 
     /**

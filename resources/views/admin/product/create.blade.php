@@ -78,7 +78,7 @@
                         <div class="form-group row" data-select2-id="23">
                             <label class="col-sm-2 col-form-label">برند</label>
                             <div class="col-sm-10">
-                                <select class="form-select" name="brand_id" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                <select class="form-select" name="brand_id" style="width: 100%;" data-select2-id="2" tabindex="-1" aria-hidden="true">
                                     @foreach($brands as $key => $value)
                                         <option value="{{$key}}">{{$value}}</option>
                                     @endforeach
