@@ -13,6 +13,7 @@
             <th class="text-center align-middle text-primary">عنوان محصول</th>
             <th class="text-center align-middle text-primary">قیمت</th>
             <th class="text-center align-middle text-primary">تعداد</th>
+            <th class="text-center align-middle text-primary">گالری</th>
             <th class="text-center align-middle text-primary">ویرایش</th>
             <th class="text-center align-middle text-primary">حذف</th>
             <th class="text-center align-middle text-primary">تاریخ ایجاد</th>
@@ -30,6 +31,11 @@
                 <td class="text-center align-middle">{{$product->title}}</td>
                 <td class="text-center align-middle">{{$product->price}}</td>
                 <td class="text-center align-middle">{{$product->count}}</td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-outline-info" href="{{route('create.product.galley',$product->id)}}">
+                        گالری
+                    </a>
+                </td>
                 <td class="text-center align-middle">
                     <a class="btn btn-outline-info" href="{{route('products.edit',$product->id)}}">
                         ویرایش
