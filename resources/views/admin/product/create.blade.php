@@ -85,6 +85,19 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group row" data-select2-id="23">
+                            <label class="col-sm-2 col-form-label">انتخاب رنگ</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" multiple="" name="colors[]"
+                                        style="width: 100%;text-align: right" style="width: 100%;" data-select2-id="3"
+                                        tabindex="-1" aria-hidden="true">
+                                     @foreach($colors as $key => $value)
+                                        <option style="" value="{{$key}}">{{$value}}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label" for="file"> آپلود عکس </label>
                             <input  class="col-sm-10" type="file" class="form-control-file" id="file" name="file">

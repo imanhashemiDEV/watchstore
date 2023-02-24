@@ -6,14 +6,15 @@
             <div class="card-body">
                 <div class="container">
                     <h6 class="card-title">ویرایش محصول</h6>
+                    <div class="row d-flex justify-content-center">
+                        <figure class="col-offset-3 col-6" >
+                            <img src="{{url('images/admin/products/big/'.$product->image)}}" class="rounded-circle" alt="image">
+                        </figure>
+                    </div>
                     <form method="POST" action="{{route('products.update',$product->id)}}" enctype="multipart/form-data" >
                         @csrf
                         @method('PATCH')
-                        <div>
-                            <figure class="avatar avatar">
-                                <img src="{{url('images/admin/products/big/'.$product->image)}}" class="rounded-circle" alt="image">
-                            </figure>
-                        </div>
+
                         <div class="form-group row">
                             <label  class="col-sm-2 col-form-label">نام فارسی محصول</label>
                             <div class="col-sm-10">
@@ -96,6 +97,23 @@
                                         @endif
                                         <option value="{{$key}}">{{$value}}</option>
                                     @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row" data-select2-id="23">
+                            <label class="col-sm-2 col-form-label">انتخاب رنگ</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" multiple="" name="colors[]"
+                                        style="width: 100%;text-align: right" style="width: 100%;" data-select2-id="3"
+                                        tabindex="-1" aria-hidden="true">
+                                    @foreach($colors as $key => $value)
+                                        @if(in_array($key,$product->colors()->pluck('id')->toArray()))
+                                        <option selected value="{{$key}}">{{$value}}</option>
+                                        @else
+                                         <option value="{{$key}}">{{$value}}</option>
+                                        @endif
+                                    @endforeach
+
                                 </select>
                             </div>
                         </div>
