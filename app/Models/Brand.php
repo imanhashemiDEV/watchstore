@@ -31,4 +31,13 @@ class Brand extends Model
             return '';
         }
     }
+
+    public static function createBrand($request)
+    {
+        $image = self::saveImage($request->image);
+        Brand::query()->create([
+            'title'=>$request->input('title'),
+            'image'=> $image
+        ]);
+    }
 }

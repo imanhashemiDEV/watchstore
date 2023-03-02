@@ -1,0 +1,10 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "WatchStore Api List",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api": {}
+    }
+}

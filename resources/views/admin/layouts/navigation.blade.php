@@ -2,13 +2,13 @@
     <div class="navigation-icon-menu">
 
         <ul>
-            @hasanyrole('مدیر کل')
+{{--            @hasanyrole('مدیر کل')--}}
             <li data-toggle="tooltip" title="کاربران">
                 <a href="#users" title=" کاربران">
                     <i class="icon ti-user"></i>
                 </a>
             </li>
-            @endhasanyrole
+{{--            @endhasanyrole--}}
 
             <li data-toggle="tooltip" title="محصولات">
                 <a href="#products" title=" محصولات">

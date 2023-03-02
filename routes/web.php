@@ -18,6 +18,10 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::get('/forbidden', function () {
+    return view('index');
+})->name('forbidden');
+
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,7 +34,8 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
+
     ///------ Main Route  -----------///
     Route::get('/', [\App\Http\Controllers\Admin\PanelController::class,'index'])->name('panel');
 
@@ -49,6 +54,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('property_groups', \App\Http\Controllers\Admin\PropertyGroupController::class);
     Route::resource('properties', \App\Http\Controllers\Admin\PropertyController::class);
+    Route::get('create_product_properties/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'addProperties'])->name('create.product.properties');
+    Route::post('store_product_properties/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'storeProperties'])->name('store.product.properties');
 
     Route::get('create_product_gallery/{id}', [\App\Http\Controllers\Admin\GalleryController::class, 'addGallery'])->name('create.product.galley');
     Route::post('store_product_gallery/{id}', [\App\Http\Controllers\Admin\GalleryController::class, 'storeGallery'])->name('store.product.galley');
