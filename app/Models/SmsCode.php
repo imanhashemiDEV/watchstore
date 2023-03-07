@@ -10,11 +10,10 @@ class SmsCode extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'mobile',
         'code'
     ];
-
 
     public static function checkTwoMinute($mobile)
     {
@@ -22,9 +21,8 @@ class SmsCode extends Model
             ->where('created_at', '>', Carbon::now()->subMinute(2))->first();
         if($check){
             return true;
-        }else{
-            return false;
         }
+        return false;
 
     }
 
@@ -34,5 +32,18 @@ class SmsCode extends Model
             'mobile'=>$mobile,
             'code'=>$code
         ]);
+    }
+
+    public static function checkSend($mobile, $code)
+    {
+        $check = self::query()->where([
+            'mobile' => $mobile,
+            'code' => $code
+        ])->first();
+
+        if($check){
+            return true;
+        }
+        return false;
     }
 }
