@@ -20,6 +20,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::prefix('/v1')->namespace('Api\V1')->group(function (){
-    Route::post('send_sms',[\App\Http\Controllers\Api\V1\AuthController::class, 'sendSms']);
-    Route::post('verify_sms_code',[\App\Http\Controllers\Api\V1\AuthController::class, 'verifySms']);
+
+    Route::post('send_sms',[\App\Http\Controllers\Api\V1\AuthApiController::class, 'sendSms']);
+    Route::post('verify_sms_code',[\App\Http\Controllers\Api\V1\AuthApiController::class, 'verifySms']);
+
+
+});
+
+Route::prefix('/v1')->namespace('Api\V1')->middleware('auth:sanctum')->group(function (){
+    Route::post('register',[\App\Http\Controllers\Api\V1\UserApiController::class, 'register']);
+
 });
