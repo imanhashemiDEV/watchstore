@@ -24,6 +24,7 @@ Route::prefix('/v1')->namespace('Api\V1')->group(function (){
     Route::post('send_sms',[\App\Http\Controllers\Api\V1\AuthApiController::class, 'sendSms']);
     Route::post('verify_sms_code',[\App\Http\Controllers\Api\V1\AuthApiController::class, 'verifySms']);
 
+    Route::get('home', [\App\Http\Controllers\Api\v1\HomeApiController::class, 'home']);
 
 });
 
