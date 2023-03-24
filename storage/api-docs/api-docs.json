@@ -93,6 +93,145 @@
                 }
             }
         },
+        "/api/v1/most_sold_products": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products page data",
+                "operationId": "aa401b22c9dfbf112000513a00cf9751",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/most_viewed_products": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products page data",
+                "operationId": "90bea068d6aebe0f2c22d2b6eec5ea7c",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/newest_products": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products page data",
+                "operationId": "3e21d83835f3a8b6cf257e841a22e6bc",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cheapest_products": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products page data",
+                "operationId": "0f7d18e86e5c9ae05bae556e1df33782",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/most_expensive_products": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products page data",
+                "operationId": "435cebec62c8fd17d2aa556503189823",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/products_by_category/{id}": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products data by category id",
+                "operationId": "7c6ee72b7daee72d814b77a8916c98f0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/products_by_brand/{id}": {
+            "get": {
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "get products data by category id",
+                "operationId": "2c9fd69167604725bca0c6023040eed0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/register": {
             "post": {
                 "tags": [

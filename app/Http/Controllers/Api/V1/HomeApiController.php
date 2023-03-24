@@ -34,7 +34,7 @@ class HomeApiController extends Controller
                 Keys::sliders => Slider::getSliders(),
                 Keys::categories=>Category::getAllCategories(),
                 Keys::amazing_products=>ProductRepository::get6AmazingProducts(),
-                Keys::baner=> Slider::query()->inRandomOrder()->first(),
+                Keys::banner=> Slider::query()->inRandomOrder()->first(),
                 Keys::most_seller_products=>ProductRepository::get6MostSellerProducts(),
                 Keys::newest_products=>ProductRepository::get6NewestProducts()
             ]
