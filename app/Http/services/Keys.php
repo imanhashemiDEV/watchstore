@@ -17,5 +17,6 @@ class Keys
 
     const products_by_category = 'products_by_category';
     const products_by_brand = 'products_by_brand';
+    const searched_products = 'products_by_brand';
 
 }

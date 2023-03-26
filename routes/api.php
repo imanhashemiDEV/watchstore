@@ -33,6 +33,8 @@ Route::prefix('/v1')->namespace('Api\V1')->group(function (){
     Route::get('most_expensive_products', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'most_expensive_products']);
     Route::get('products_by_category/{id}', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'productsByCategory']);
     Route::get('products_by_brand/{id}', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'productsByBrand']);
+    Route::get('product_details/{id}', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'productDetail']);
+    Route::post('search_product', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'searchProduct']);
 
 
 
@@ -40,5 +42,7 @@ Route::prefix('/v1')->namespace('Api\V1')->group(function (){
 
 Route::prefix('/v1')->namespace('Api\V1')->middleware('auth:sanctum')->group(function (){
     Route::post('register',[\App\Http\Controllers\Api\V1\UserApiController::class, 'register']);
+    Route::post('save_product_comment',[\App\Http\Controllers\Api\V1\ProductsApiController::class, 'saveComment']);
+
 
 });
