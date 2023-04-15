@@ -111,7 +111,7 @@
                                         "type": "integer",
                                         "example": "1"
                                     },
-                                    "orders": {
+                                    "items": {
                                         "type": "array",
                                         "items": {
                                             "properties": {
