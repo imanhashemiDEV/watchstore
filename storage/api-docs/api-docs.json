@@ -109,7 +109,7 @@
                                 "properties": {
                                     "address_id": {
                                         "type": "integer",
-                                        "example": "1"
+                                        "example": "4"
                                     },
                                     "items": {
                                         "type": "array",

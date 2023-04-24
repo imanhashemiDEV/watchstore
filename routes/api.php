@@ -35,7 +35,7 @@ Route::prefix('/v1')->namespace('Api\V1')->group(function (){
     Route::get('products_by_brand/{id}', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'productsByBrand']);
     Route::get('product_details/{id}', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'productDetail']);
     Route::post('search_product', [\App\Http\Controllers\Api\v1\ProductsApiController::class, 'searchProduct']);
-    Route::get('callback', [\App\Http\Controllers\Api\v1\PaymentApiController::class, 'callback']);
+    Route::get('payment/callback', [\App\Http\Controllers\Api\v1\PaymentApiController::class, 'callback']);
 
 
 
