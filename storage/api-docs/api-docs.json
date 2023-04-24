@@ -471,6 +471,27 @@
                     }
                 ]
             }
+        },
+        "/api/v1/profile": {
+            "post": {
+                "tags": [
+                    "User info"
+                ],
+                "operationId": "a2c6a297770e6fc2dedb89c436394d4a",
+                "responses": {
+                    "200": {
+                        "description": "It's Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
         }
     },
     "components": {
