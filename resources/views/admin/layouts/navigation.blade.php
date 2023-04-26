@@ -16,6 +16,12 @@
                 </a>
             </li>
 
+            <li data-toggle="tooltip" title="پرداخت">
+                <a href="#payment" title=" پرداخت">
+                    <i class="icon ti-folder"></i>
+                </a>
+            </li>
+
         </ul>
 
         <ul>
@@ -107,6 +113,14 @@
                 <ul>
                     <li><a href="{{route('properties.create')}}">ایجاد ویژگی </a></li>
                     <li><a href="{{route('properties.index')}}">لیست  ویژگی ها</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="payment">
+            <li>
+                <a href="#">فروش</a>
+                <ul>
+                    <li><a href="{{route('orders.panel')}}">لیست فروش</a></li>
                 </ul>
             </li>
         </ul>

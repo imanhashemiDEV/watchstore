@@ -60,5 +60,6 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::get('create_product_gallery/{id}', [\App\Http\Controllers\Admin\GalleryController::class, 'addGallery'])->name('create.product.galley');
     Route::post('store_product_gallery/{id}', [\App\Http\Controllers\Admin\GalleryController::class, 'storeGallery'])->name('store.product.galley');
 
-
+    Route::get('orders', [\App\Http\Controllers\Admin\OrderController::class, 'orders'])->name('orders.panel');
+    Route::get('order_details/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'orderDetails'])->name('order.details.panel');
 });

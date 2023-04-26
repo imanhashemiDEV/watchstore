@@ -19,9 +19,19 @@ class Order extends Model
         'user_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class);
+    }
+
+    public function recievedOrderDetails()
+    {
+        return $this->hasMany(OrderDetail::class)->where('status', OrderStatus::Received->value);
     }
 
 
