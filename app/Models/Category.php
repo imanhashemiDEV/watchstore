@@ -37,8 +37,8 @@ class Category extends Model
             $smallImage->resize(256,256,function ($constraint){
                 $constraint->aspectRatio();
             });
-            Storage::disk('local')->put('images/admin/categories/small/'.$name,(string) $smallImage->encode('png',90));
-            Storage::disk('local')->put('images/admin/categories/big/'.$name,(string) $bigImage->encode('png',90));
+            Storage::disk('local')->put('admin/categories/small/'.$name,(string) $smallImage->encode('png',90));
+            Storage::disk('local')->put('admin/categories/big/'.$name,(string) $bigImage->encode('png',90));
             return $name;
         }else{
             return '';
