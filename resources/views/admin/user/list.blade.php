@@ -10,7 +10,8 @@
         </div>
         <div class="card">
             <div class="card-body">
-              <livewire:admin.users/>
+{{--              <livewire:admin.users/>--}}
+                <livewire:user-table theme="bootstrap-4" />
             </div>
         </div>
     </main>
