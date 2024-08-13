@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if(auth()->check()){
+        return redirect()->route('panel');
+    }
     return redirect()->route('login');
 });
 
@@ -36,6 +39,9 @@ require __DIR__.'/auth.php';
 
 Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
 
+    Route::get('/api/docs', function (){
+        return redirect()->to('http://127.0.0.1:8000/admin/api/docs');
+    });
     ///------ Main Route  -----------///
     Route::get('/', [\App\Http\Controllers\Admin\PanelController::class,'index'])->name('panel');
 

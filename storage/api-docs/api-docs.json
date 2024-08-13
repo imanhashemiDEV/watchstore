@@ -164,7 +164,7 @@
                     "Products Page"
                 ],
                 "description": "get products page data",
-                "operationId": "aa401b22c9dfbf112000513a00cf9751",
+                "operationId": "71043ef87977dd04b18915df8cbc9f06",
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -181,7 +181,7 @@
                     "Products Page"
                 ],
                 "description": "get products page data",
-                "operationId": "90bea068d6aebe0f2c22d2b6eec5ea7c",
+                "operationId": "c3795b5bc208fd8a5d6e2802b78297e9",
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -198,7 +198,7 @@
                     "Products Page"
                 ],
                 "description": "get products page data",
-                "operationId": "3e21d83835f3a8b6cf257e841a22e6bc",
+                "operationId": "d3fac5082867e4fb0cf7c34b800c9351",
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -215,7 +215,7 @@
                     "Products Page"
                 ],
                 "description": "get products page data",
-                "operationId": "0f7d18e86e5c9ae05bae556e1df33782",
+                "operationId": "8347f7a8477810bca255da30da025d0d",
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -232,7 +232,7 @@
                     "Products Page"
                 ],
                 "description": "get products page data",
-                "operationId": "435cebec62c8fd17d2aa556503189823",
+                "operationId": "5736889554b97c98e87d7d031876b4c1",
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -249,7 +249,7 @@
                     "Products Page"
                 ],
                 "description": "get products data by category id",
-                "operationId": "7c6ee72b7daee72d814b77a8916c98f0",
+                "operationId": "405d1e219fade8f19f916b7aecf56cc4",
                 "parameters": [
                     {
                         "name": "id",
@@ -276,7 +276,7 @@
                     "Products Page"
                 ],
                 "description": "get products data by category id",
-                "operationId": "2c9fd69167604725bca0c6023040eed0",
+                "operationId": "47edbc06e30ed03b55a05d3afc326cc7",
                 "parameters": [
                     {
                         "name": "id",
@@ -303,7 +303,7 @@
                     "Product Details"
                 ],
                 "description": "get product details data by product id",
-                "operationId": "558d732b5e17b330f599fbcca57c0f62",
+                "operationId": "e2bda0a2b3a40d81d4f4c4d89dcbe136",
                 "parameters": [
                     {
                         "name": "id",
@@ -332,7 +332,7 @@
                     "Product Details"
                 ],
                 "description": "save user comment for product",
-                "operationId": "468ce2fc8bc611bf833c75f6191568ae",
+                "operationId": "f10e41ac3fe9dcb761224bdb73f33c14",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -378,7 +378,7 @@
                     "Products Page"
                 ],
                 "description": "search product",
-                "operationId": "595bf7c538a327285caa5db42e67b2ce",
+                "operationId": "a323288506b493a524ad56eeecbc018b",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -410,7 +410,7 @@
                     "User Api"
                 ],
                 "description": "use to signin user with recieved code",
-                "operationId": "5bd3b2ccbefc6cd63d6efda1f88da96e",
+                "operationId": "5c468f9e0f6bb6a0779c4a3f7c0f7100",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -477,7 +477,7 @@
                 "tags": [
                     "User info"
                 ],
-                "operationId": "a2c6a297770e6fc2dedb89c436394d4a",
+                "operationId": "29df1511df7eaf64ce674cacc25bfc50",
                 "responses": {
                     "200": {
                         "description": "It's Ok",
